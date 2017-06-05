@@ -11,7 +11,7 @@ var saveRequested = process.env.npm_config_save
 
 // This block only executes if Hoodie is installed with `-S` or `--save` flags.
 if (saveRequested) {
-  var pathToAppRoot = path.resolve('..', '..')
+  var pathToAppRoot = path.resolve(process.env.PWD, '..', '..')
   var packageJson = require(path.join(pathToAppRoot, 'package.json'))
 
   packageJson.scripts = packageJson.scripts || {}
